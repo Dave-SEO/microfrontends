@@ -56,7 +56,7 @@ export default defineComponent({
 <style lang="scss" scoped>
 .box{
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #f6f6f6;
     padding: 20px 0;
