@@ -1,7 +1,7 @@
 import React, {FC, useEffect, useState} from 'react'
 import { Tabs, Image } from 'antd';
 import styled from './TabComponent.module.css'
-import axios  from 'axios';
+import {videoList} from './data'
 const { TabPane } = Tabs;
 
 function callback(key: any) {
@@ -34,10 +34,14 @@ const cart = [
 
 
 export const TabComponent: FC = () => {
-  const [data, setData] = useState(cartVideo)
+  const [cart, setCart] = useState<any []>([])
   useEffect(() => {
-
+    setCart(videoList)
+    setTimeout(() => {
+      console.log('cart', cart)
+    },1000)
   }, [])
+  
   return  <Tabs defaultActiveKey="0" onChange={callback}>
               {
                 tabCartData.map((item, i) => (
@@ -45,6 +49,7 @@ export const TabComponent: FC = () => {
                     {
                       cart.map((cartList, index) => (
                         <div key={index} className={styled.tabContent}>
+                          {console.log('---', cart)}
                           <Image width={200} src={cartList.url} preview={false}/>
                           <span>{cartList.name}</span>
                         </div>
