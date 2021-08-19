@@ -1,0 +1,6 @@
+.tabContent{
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px solid #f6f6f6;
+    padding: 20px 0;
+}

@@ -1,0 +1,16 @@
+.videoContent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1200px;
+    margin: 0 auto;
+}
+.videoContent video{
+    width: 80%;
+}
+.videoContent p{
+    width: 100%;
+    text-align: left;
+    padding: 20px;
+    box-sizing: border-box;
+}
