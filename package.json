@@ -1,0 +1,22 @@
+{
+  "name": "microfrontends",
+  "version": "1.0.0",
+  "description": "- 优势     * 技术栈无关     * 主框架不限制接入应用的技术栈，微应用具备完全自主权     * 独立开发、独立部署     * 微前端是一种非常好的实施渐进式重构的手段和策略     * 微应用仓库独立，前后端可独立开发，主框架自动完成同步更新     * 独立运行     * 每个微应用之间状态隔离，运行时状态不共享",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./build/run.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dave-SEO/microfrontends.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Dave-SEO/microfrontends/issues"
+  },
+  "homepage": "https://github.com/Dave-SEO/microfrontends#readme",
+  "dependencies": {
+    "koa-generator": "^1.1.17"
+  }
+}
