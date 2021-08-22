@@ -1,5 +1,6 @@
 <template>
   <div>
+    <Button>sdsd</Button>
       <CartConfig />
      <div class="cartTwo">
           <Carousel />
@@ -15,12 +16,14 @@ import axios from 'axios'
 import Carousel from '../components/Carousel.vue'
 import List from '../components/List.vue'
 import CartConfig from '../components/cartConfig.vue'
+import {Button} from 'ant-design-vue'
 export default defineComponent({
   name: 'home',
   components:{
     Carousel,
     List,
-    CartConfig
+    CartConfig,
+    Button
   },
   props: {
   },

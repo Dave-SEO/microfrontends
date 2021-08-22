@@ -1,13 +1,21 @@
 {
-  "name": "-",
+  "name": "my-lib",
+  "files": ["dist"],
+  "main": "./dist/my-lib.umd.js",
+  "module": "./dist/my-lib.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/my-lib.es.js",
+      "require": "./dist/my-lib.umd.js"
+    }
+  },
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "build": "vite build",
     "serve": "vite preview"
   },
   "dependencies": {
-    "ant-design-vue": "^2.2.2",
     "axios": "^0.21.1",
     "compression": "^1.7.4",
     "cookie-parser": "^1.4.5",
@@ -19,6 +27,7 @@
     "xsrf": "^1.0.0"
   },
   "devDependencies": {
+    "ant-design-vue": "^2.2.2",
     "@types/node": "^15.12.5",
     "@vitejs/plugin-vue": "^1.2.3",
     "@vue/compiler-sfc": "^3.0.5",
