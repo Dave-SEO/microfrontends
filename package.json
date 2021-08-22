@@ -17,6 +17,5 @@
   },
   "homepage": "https://github.com/Dave-SEO/microfrontends#readme",
   "dependencies": {
-    "koa-generator": "^1.1.17"
   }
 }

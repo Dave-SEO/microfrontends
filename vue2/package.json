@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "ant-design-vue": "^1.7.6",
+    "axios": "^0.21.1",
     "element-ui": "^2.15.5",
     "vite": "^2.4.4",
     "vite-plugin-components": "^0.13.2",

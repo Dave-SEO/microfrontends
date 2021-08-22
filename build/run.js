@@ -4,6 +4,7 @@ const filePath = {
     vue2: path.resolve(__dirname, '../vue2'),
     vue3: path.resolve(__dirname, '../vue3'),
     react17: path.resolve(__dirname, '../react17')
+    // server: path.resolve(__dirname, '../server')
 }
 
 const runChild = () => {

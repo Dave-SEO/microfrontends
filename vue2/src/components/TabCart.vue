@@ -14,6 +14,7 @@
 </template>
 <script>
 import { Tabs, TabPane, Image } from 'element-ui';
+import axios from 'axios'
 export default {
  name: 'TabCart',
  props: {
@@ -26,31 +27,18 @@ export default {
      return {
          activeName: '0',
          tabCartData: ['推荐', '热门车系', '10万以下', '10-20万', '20-30万', '30万以上'],
-         cart: [
-             {
-                 name: '林肯领航员NAVIGATOR',
-                 url: 'https://www.lincoln.com.cn/content/dam/lincoln/cn/l_cn_zh/nameplate/thumbnail/navigator2020.jpg'
-             },
-              {
-                 name: '林肯飞行家插电式混动版',
-                 url: '	https://www.lincoln.com.cn/content/dam/lincoln/cn/l_cn_zh/nameplate/thumbnail/phev.jpg'
-             },
-             {
-                 name: '新款林肯飞行家AVIATOR',
-                 url: 'https://www.lincoln.com.cn/content/dam/lincoln/cn/l_cn_zh/nameplate/thumbnail/2021aviator.jpg'
-             },
-             {
-                 name: '林肯领航员NAVIGATOR',
-                 url: 'https://www.lincoln.com.cn/content/dam/lincoln/cn/l_cn_zh/nameplate/thumbnail/navigator2020.jpg'
-             },
-              {
-                 name: '林肯飞行家插电式混动版',
-                 url: '	https://www.lincoln.com.cn/content/dam/lincoln/cn/l_cn_zh/nameplate/thumbnail/phev.jpg'
-             }
-         ]
+         cart: []
      }
  },
+ mounted() {
+    this.init()
+ },
  methods: {
+    async init(){
+       const {data: {data}} = await axios.get('http://localhost:3000/cart/cartlist?page=1')
+       console.log(data)
+       this.cart = data
+     },
      handleClick(){
 
      }

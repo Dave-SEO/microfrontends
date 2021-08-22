@@ -121,3 +121,54 @@
 
 ## 项目架构
 
+## koa2-generator 快速构建后端服务
+### 安装
+
+```javascript
+<!--全局安装koa2-generator脚手架-->
+npm install -g koa2-generator
+koa2 项目名称
+```
+
+
+## node child_process 同时启动多个项目
+
+1. npm init 初始化package.json
+2. 根目录下创建build文件夹并生成build.js文件
+3. package.json文件配置scripts 运行build.js脚本
+
+```json
+ "scripts": {
+    "start": "node ./build/build.js"
+  },
+```
+
+```javascript
+    const {spawn} = require('child_process');
+    const path = require('path')
+    const filePath = {
+    vue2: path.resolve(__dirname, '../vue2'),
+    vue3: path.resolve(__dirname, '../vue3'),
+    react17: path.resolve(__dirname, '../react17'),
+    server: path.resolve(__dirname, '../server')
+}
+
+const runChild = () => {
+    Object.values(filePath).forEach(item => {
+        spawn(`cd ${item} && npm run dev`, {stdio: 'inherit',shell: true})
+    })
+}
+runChild()
+```
+
+## server端
+### 跨域处理
+
+```JavaScript
+npm install koa2-cors
+// app.js
+const koa2Cors = require('koa2-cors')
+app.use(koa2Cors())
+```
+
+
