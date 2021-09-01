@@ -1,6 +1,9 @@
 import vue from '@vitejs/plugin-vue';
 import { defineConfig } from 'vite';
 import styleImport from 'vite-plugin-style-import';
+import babel from 'rollup-plugin-babel';
+import commonjs from 'rollup-plugin-commonjs';
+
 const path = require('path')
 export default defineConfig({
   build: {
@@ -18,14 +21,16 @@ export default defineConfig({
     //     }
     //   }
     // }
-    rollupOptions: {
-      output: {
-        dir: 'bundle',
-        file: 'bundle.js',
-        format: 'umd',
-        name: 'MyBundle'
-      }
-    }
+    // rollupOptions: {
+    //   input: './src/my-single-spa.js',
+    //   output: {
+    //     dir: './aa',
+    //     file: './lib/umd/my-single-spa.js',
+    //     format: 'umd',
+    //     name: 'mySingleSpa',
+    //     sourcemap: true
+    //   }
+    // }
   },
   server: {
     open: true,
@@ -54,7 +59,9 @@ export default defineConfig({
     }
   },
   plugins: [
+    commonjs(),
     vue(),
+    babel({exclude: 'node_modules/**'}),
     styleImport({
       libs: [
         {

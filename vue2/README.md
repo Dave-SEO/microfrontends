@@ -1,4 +1,9 @@
-# vue3
+# hello-vue
+## vue2
+
+```
+npx @vue/cli create vue
+```
 
 ## Project setup
 ```
