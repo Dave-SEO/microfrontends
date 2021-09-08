@@ -1,16 +1,10 @@
 import {createRouter, createWebHistory, RouteRecordRaw} from 'vue-router'
 
-const Home = () => import('@/views/home.vue'/* webpackChunkName: "home" */)
-const SelectCart = () => import('@/views/selectCart.vue'/* webpackChunkName: "selectCart" */)
 const routes: RouteRecordRaw[] = [
-    {
-        path: '/',
-        component: Home
-    },
-    {
-        path: '/selectCart',
-        component: SelectCart
-    }
+   {
+       path: '/',
+       component: import('@/views/home.vue' /* webpackChunkName: "main-home" */)
+   }
 ]
 // import.meta.env.BASE_URL
 const router = createRouter({
